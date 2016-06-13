@@ -52,7 +52,7 @@ namespace Plugin.Toasts
         {
             _messageBarQueue = new Queue<MessageView>();
             _messageVisible = false;
-            _messageBarOffset = 20;
+            _messageBarOffset = UIApplication.SharedApplication.StatusBarHidden ? 0 : 20;
         }
 
         private UIView MessageWindowView { get { return GetMessageBarViewController().View; } }
